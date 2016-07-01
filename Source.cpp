@@ -70,24 +70,23 @@ void mainMenu()
 
 void borderCreator()
 {
-	gotoxy(1, 1);
-	for (int i = 1; i < 11;i++)
+	gotoxy(0, 0);
+	for (int y = 1; y < 26; y++)
 	{
-		if(i==1)
-			for (int j = 1; j < 10; i++)
+		if(y==0||y==25)
+			for (int x = 0; x < 80; x++)
 		{
-			gotoxy(1, i);
+			gotoxy(x, y);
 			cout << "*";
 		}
 		else
 		{
-			gotoxy(i, 1);
+			gotoxy(x, 0);
 			cout << "*";
-			gotoxy(i, 10);
+			gotoxy(x, 79);
 			cout << "*";
 		}
 	}
-	gotoxy(1,1);
 
 }
 
@@ -96,7 +95,7 @@ void loadingSequence()
 	for (int x = 0; x < 26; x++)
 		for (int y = 0; y < 80; y++)
 		{
-			waitFunction(10000000000000);
+			waitFunction(100);
 			gotoxy(x, y);
 			cout << "*";
 		}
@@ -104,8 +103,5 @@ void loadingSequence()
 
 void waitFunction(int x)
 {
-	int j = 0;
-	
 	for (int i = 1; i < x; i++);
-	
 }
