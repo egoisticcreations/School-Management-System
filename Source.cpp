@@ -11,6 +11,12 @@ using namespace std;
     void openingCredits();
 	void passwordMenu();
 	void mainMenu();
+	     // Sub-menu declarations...
+	     void newAdmission();
+		 void search();
+		 void memberManager();
+		 void modifyMember();
+		 void report();
 
 //All Tool Declarations...
 //*****************************************************************************************
@@ -30,23 +36,18 @@ using namespace std;
 
 //Main Program...
 
-int main()
+int main()  // Change it to void main...
 { 
-	char x='a';	
-	gotoxy(4, 4);
-	cout << "Hellow.." << endl;
 
+	openingCredits();
 	loadingSequence();
-	
-	while (x != 'y')
-	{
-		cout << "Do you wanna exit ?";
-		cin >> x;
-	}
+	mainMenu();
 		
 }
 
-// At the start of the program , this shows the initial details (credits) of the program..
+
+//*****************************************************************************************
+// All the definitions of all the functions...
 //*****************************************************************************************
 
 void openingCredits()
@@ -54,39 +55,60 @@ void openingCredits()
 
 }
 
-//*****************************************************************************************
+    // Menu definitions...
 
 void passwordMenu()
 {
 }
 
-// In the program , this shows the username and password input box logic for the pre-created user... 
-// If the input username or password dosen't exist , it prompts to use a valid input..
-//*****************************************************************************************
-
 void mainMenu()
 {
 }
 
+    // Sub-menu definitions...
+
+void newAdmission()
+{
+}
+
+void search()
+{
+}
+
+void memberManager()
+{
+}
+
+void modifyMember()
+{
+}
+
+void report()
+{
+}
+
+    // Helper tool definitions...
+
 void borderCreator()
 {
-	gotoxy(0, 0);
-	for (int y = 1; y < 26; y++)
+	gotoxy(1, 1);
+	for (int i = 1; i < 11;i++)
 	{
-		if(y==0||y==25)
-			for (int x = 0; x < 80; x++)
+		if(i==1)
+			for (int j = 1; j < 10; i++)
 		{
-			gotoxy(x, y);
+			gotoxy(1, i);
 			cout << "*";
 		}
 		else
 		{
-			gotoxy(x, 0);
+			gotoxy(i, 1);
 			cout << "*";
-			gotoxy(x, 79);
+			gotoxy(i, 10);
 			cout << "*";
 		}
 	}
+	gotoxy(1,1);
 
 }
 
@@ -95,7 +117,7 @@ void loadingSequence()
 	for (int x = 0; x < 26; x++)
 		for (int y = 0; y < 80; y++)
 		{
-			waitFunction(100);
+			waitFunction(10000000000000);
 			gotoxy(x, y);
 			cout << "*";
 		}
@@ -103,5 +125,8 @@ void loadingSequence()
 
 void waitFunction(int x)
 {
+	int j = 0;
+	
 	for (int i = 1; i < x; i++);
+	
 }
